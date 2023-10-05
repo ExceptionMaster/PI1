@@ -3,6 +3,7 @@ package tests;
 import java.util.ArrayList;
 import java.util.List;
 
+import ejemplos.Ejemplo1;
 import us.lsi.common.Files2;
 import us.lsi.geometria.Punto2D;
 
@@ -15,7 +16,9 @@ public class tests {
 					Double.valueOf(partes[1]));
 			ls.add(p);
 		}
-		System.out.println(ls);
+		System.out.println("==== EJEMPLO 1 ====");
+		System.out.println("Iterativo: " + Ejemplo1.ejemplo1Iter(ls));
+		System.out.println("Recursivo: " + Ejemplo1.ejemplo1Rec(ls));
 	}
 	
 	public static void main(String[] args) {

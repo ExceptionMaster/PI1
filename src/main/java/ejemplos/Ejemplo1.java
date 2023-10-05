@@ -17,13 +17,37 @@ public class Ejemplo1 {
 	
 	public static Map<Cuadrante, Double> ejemplo1Iter(List<Punto2D> ls) {
 		Map<Cuadrante, Double> res = new HashMap<>();
-		for (Punto2D p : ls) {
+		Integer e = 0;
+		while(e < ls.size()) {
+			Punto2D p = ls.get(e);
 			Cuadrante key = p.cuadrante();
 			if(!res.containsKey(key)) {
 				res.put(key, 0.0);
 			}
 			res.put(key, res.get(key) + p.x());
+			e++;
 		}
 		return res;
+	}
+	
+	public static Map<Cuadrante, Double> ejemplo1Rec(List<Punto2D> ls) {
+		Map<Cuadrante, Double> res = new HashMap<>();
+		Integer e = 0;
+		return ejemplo1RecAux(ls, res, e);
+	}
+	
+	public static Map<Cuadrante, Double> ejemplo1RecAux(List<Punto2D> ls, Map<Cuadrante, Double> res, Integer e) {
+		if(!(e < ls.size())) {
+			return res;
+		} else {
+			Punto2D p = ls.get(e);
+			Cuadrante key = p.cuadrante();
+			if(!res.containsKey(key)) {
+				res.put(key, 0.0);
+			}
+			res.put(key, res.get(key) + p.x());
+			e++;
+			return ejemplo1RecAux(ls, res, e);
+		}
 	}
 }
