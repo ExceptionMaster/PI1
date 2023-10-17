@@ -1,4 +1,4 @@
-package ejemplos;
+package adda.ejemplos;
 
 import java.util.HashMap;
 import java.util.List;

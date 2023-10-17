@@ -1,4 +1,4 @@
-package ejemplos;
+package adda.ejemplos;
 
 public class Ejemplo2 {
 	public static String ejemplo2RecNF(Integer a, Integer b) {
