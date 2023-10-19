@@ -22,6 +22,7 @@ public class Tests {
 		System.out.println("==== EJEMPLO 1 ====");
 		System.out.println("Iterativo: " + Ejemplo1.ejemplo1Iter(ls));
 		System.out.println("Recursivo: " + Ejemplo1.ejemplo1Rec(ls));
+		System.out.println("\n\n");
 	}
 	
 	public static void testEjemplo2() {
@@ -36,6 +37,7 @@ public class Tests {
 			System.out.println("Funcional: " + Ejemplo2.Ej2Fun(a, b));
 			
 		}
+		System.out.println("\n\n");
 	}
 	
 	public static void testEjemplo3() {
@@ -47,34 +49,35 @@ public class Tests {
 			System.out.println("Recursivo sin memoria: " + Ejemplo3.ej3RecSinMem(a, b));
 			System.out.println("Recursivo con memoria: " + Ejemplo3.ej3RecConMem(a, b));
 		}
+		System.out.println("\n\n");
 	}
 	
 	public static void testEjercicio1 () {
 		System.out.println("==== EJERCICIO 1 ====");
 		StringBuilder sbFun = new StringBuilder("Funcional: \n");
 		StringBuilder sbIter = new StringBuilder("Iterativo: \n");
+		StringBuilder sbRecF = new StringBuilder("Recursivo Final: \n");
 		for(String linea: Files2.linesFromFile("data/PI1Ej1DatosEntrada.txt")) {
 			String[] partes = linea.split(",");
 			Integer a = Integer.valueOf(partes[0]);
 			Integer b = Integer.valueOf(partes[1]);
-			sbFun.append(Ejercicio1.ejercicio1(a, b));
+			sbFun.append(Ejercicio1.ej1Func(a, b));
 			sbFun.append("\n");
-			sbIter.append(Ejercicio1.ejercicio1Iter(a, b));
+			sbIter.append(Ejercicio1.ej1Iter(a, b));
 			sbIter.append("\n");
+			sbRecF.append(Ejercicio1.ej1RecF(a, b));
+			sbRecF.append("\n");
 		}
 		System.out.println(sbFun.toString());
 		System.out.println(sbIter.toString());
+		System.out.println(sbRecF.toString());
 	}
 	
 	public static void main(String[] args) {
 		testEjemplo1();
-		System.out.println("\n");
 		testEjemplo2();
-		System.out.println("\n");
 		testEjemplo3();
-		System.out.println("\n");
 		testEjercicio1();
-		System.out.println("\n");
 	}
 	
 }
