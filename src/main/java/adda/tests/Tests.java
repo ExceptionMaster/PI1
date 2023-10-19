@@ -5,6 +5,7 @@ import java.util.List;
 
 import adda.ejemplos.Ejemplo1;
 import adda.ejemplos.Ejemplo2;
+import adda.ejemplos.Ejemplo3;
 import adda.ejercicios.Ejercicio1;
 import us.lsi.common.Files2;
 import us.lsi.geometria.Punto2D;
@@ -31,7 +32,20 @@ public class Tests {
 			Integer b = Integer.valueOf(partes[1]);
 			System.out.println("Recursivo no final: " + Ejemplo2.ejemplo2RecNF(a, b));
 			System.out.println("Recursivo final: " + Ejemplo2.ejemplo2RecF(a, b));
+			//System.out.println("Iterativo: " + Ejemplo2.ejemplo2Iter(a,b));
+			System.out.println("Funcional: " + Ejemplo2.Ej2Fun(a, b));
 			
+		}
+	}
+	
+	public static void testEjemplo3() {
+		System.out.println("==== EJEMPLO 3 ====");
+		for(String linea: Files2.linesFromFile("data/Ejemplo3DatosEntrada.txt")) {
+			String[] partes = linea.split(",");
+			Integer a = Integer.valueOf(partes[0]);
+			Integer b = Integer.valueOf(partes[1]);
+			System.out.println("Recursivo sin memoria: " + Ejemplo3.ej3RecSinMem(a, b));
+			System.out.println("Recursivo con memoria: " + Ejemplo3.ej3RecConMem(a, b));
 		}
 	}
 	
@@ -53,9 +67,14 @@ public class Tests {
 	}
 	
 	public static void main(String[] args) {
-		//testEjemplo1();
-		//testEjemplo2();
+		testEjemplo1();
+		System.out.println("\n");
+		testEjemplo2();
+		System.out.println("\n");
+		testEjemplo3();
+		System.out.println("\n");
 		testEjercicio1();
+		System.out.println("\n");
 	}
 	
 }
