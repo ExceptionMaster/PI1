@@ -50,7 +50,7 @@ public class Ejemplo2 {
 		}
 	}
 	
-	public static String Ej2Fun(Integer a, Integer b) {
+	public static String ejemplo2Fun(Integer a, Integer b) {
 		return Stream.iterate(TuplaEj2.of(a, b), x -> x.next())
 				.filter(x -> !x.hasNext())
 				.findFirst()
