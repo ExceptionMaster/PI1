@@ -2,6 +2,7 @@ package adda.tests;
 
 import adda.ejercicios.Ejercicio1;
 import adda.ejercicios.Ejercicio2;
+import adda.ejercicios.Ejercicio3;
 import us.lsi.common.Files2;
 
 public class Tests {	
@@ -58,9 +59,33 @@ public class Tests {
 		System.out.println(sbRecNF.toString());
 	}
 	
+	public static void testEjercicio3 () {
+		String file1A = "./data/PI1Ej3DatosEntrada1A.txt";
+		String file1B = "./data/PI1Ej3DatosEntrada1B.txt";
+		String file2A = "./data/PI1Ej3DatosEntrada2A.txt";
+		String file2B = "./data/PI1Ej3DatosEntrada2B.txt";
+		String file3A = "./data/PI1Ej3DatosEntrada3A.txt";
+		String file3B = "./data/PI1Ej3DatosEntrada3B.txt";
+		
+		System.out.println("==== EJERCICIO 3 ====");
+		System.out.println("Iterativo: ");
+		System.out.println(Ejercicio3.ejercicio3Iter(file1A, file1B));
+		System.out.println(Ejercicio3.ejercicio3Iter(file2A, file2B));
+		System.out.println(Ejercicio3.ejercicio3Iter(file3A, file3B));
+		/*System.out.println("Recursivo Final: ");
+		System.out.println(Ejercicio3.ejercicio3RecF(file1A, file1B));
+		System.out.println(Ejercicio3.ejercicio3RecF(file2A, file2B));
+		System.out.println(Ejercicio3.ejercicio3RecF(file3A, file3B));
+		System.out.println("Funcional: ");
+		System.out.println(Ejercicio3.ejercicio3Func(file1A, file1B));
+		System.out.println(Ejercicio3.ejercicio3Func(file2A, file2B));
+		System.out.println(Ejercicio3.ejercicio3Func(file3A, file3B));*/
+	}
+	
 	public static void main(String[] args) {
 		testEjercicio1();
 		testEjercicio2();
+		testEjercicio3();
 	}
 	
 }
