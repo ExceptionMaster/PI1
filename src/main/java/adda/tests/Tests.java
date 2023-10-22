@@ -57,6 +57,7 @@ public class Tests {
 		System.out.println(sbIter.toString());
 		System.out.println(sbRecF.toString());
 		System.out.println(sbRecNF.toString());
+		System.out.println("\n\n");
 	}
 	
 	public static void testEjercicio3 () {
@@ -72,14 +73,16 @@ public class Tests {
 		System.out.println(Ejercicio3.ejercicio3Iter(file1A, file1B));
 		System.out.println(Ejercicio3.ejercicio3Iter(file2A, file2B));
 		System.out.println(Ejercicio3.ejercicio3Iter(file3A, file3B));
-		/*System.out.println("Recursivo Final: ");
+		System.out.println("\n");
+		System.out.println("Recursivo Final: ");
 		System.out.println(Ejercicio3.ejercicio3RecF(file1A, file1B));
 		System.out.println(Ejercicio3.ejercicio3RecF(file2A, file2B));
 		System.out.println(Ejercicio3.ejercicio3RecF(file3A, file3B));
+		System.out.println("\n");
 		System.out.println("Funcional: ");
 		System.out.println(Ejercicio3.ejercicio3Func(file1A, file1B));
 		System.out.println(Ejercicio3.ejercicio3Func(file2A, file2B));
-		System.out.println(Ejercicio3.ejercicio3Func(file3A, file3B));*/
+		System.out.println(Ejercicio3.ejercicio3Func(file3A, file3B));
 	}
 	
 	public static void main(String[] args) {
