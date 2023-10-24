@@ -3,11 +3,12 @@ package adda.tests;
 import adda.ejercicios.Ejercicio1;
 import adda.ejercicios.Ejercicio2;
 import adda.ejercicios.Ejercicio3;
+import adda.ejercicios.Ejercicio4;
 import us.lsi.common.Files2;
 
 public class Tests {	
 	public static void testEjercicio1 () {
-		System.out.println("==== EJERCICIO 1 ====");
+		System.out.println("================ EJERCICIO 1 ================");
 		StringBuilder sbFun = new StringBuilder("Funcional: \n");
 		StringBuilder sbIter = new StringBuilder("Iterativo: \n");
 		StringBuilder sbRecF = new StringBuilder("Recursivo Final: \n");
@@ -25,11 +26,12 @@ public class Tests {
 		System.out.println(sbFun.toString());
 		System.out.println(sbIter.toString());
 		System.out.println(sbRecF.toString());
+		System.out.println("=============================================");
 		System.out.println("\n\n");
 	}
 	
 	public static void testEjercicio2 () {
-		System.out.println("==== EJERCICIO 2 ====");
+		System.out.println("================ EJERCICIO 2 ================");
 		StringBuilder sbFun = new StringBuilder("Funcional: \n");
 		StringBuilder sbIter = new StringBuilder("Iterativo: \n");
 		StringBuilder sbRecF = new StringBuilder("Recursivo Final: \n");
@@ -57,6 +59,7 @@ public class Tests {
 		System.out.println(sbIter.toString());
 		System.out.println(sbRecF.toString());
 		System.out.println(sbRecNF.toString());
+		System.out.println("=============================================");
 		System.out.println("\n\n");
 	}
 	
@@ -68,7 +71,7 @@ public class Tests {
 		String file3A = "./data/PI1Ej3DatosEntrada3A.txt";
 		String file3B = "./data/PI1Ej3DatosEntrada3B.txt";
 		
-		System.out.println("==== EJERCICIO 3 ====");
+		System.out.println("================ EJERCICIO 3 ================");
 		System.out.println("Iterativo: ");
 		System.out.println(Ejercicio3.ejercicio3Iter(file1A, file1B));
 		System.out.println(Ejercicio3.ejercicio3Iter(file2A, file2B));
@@ -83,12 +86,43 @@ public class Tests {
 		System.out.println(Ejercicio3.ejercicio3Func(file1A, file1B));
 		System.out.println(Ejercicio3.ejercicio3Func(file2A, file2B));
 		System.out.println(Ejercicio3.ejercicio3Func(file3A, file3B));
+		System.out.println("=============================================");
+		System.out.println("\n\n");
 	}
+	
+	public static void testEjercicio4 () {
+		System.out.println("================ EJERCICIO 4 ================");
+		StringBuilder sbSinMem = new StringBuilder("Sin memoria: \n");
+		StringBuilder sbConMem = new StringBuilder("Con memoria: \n");
+		StringBuilder sbIter = new StringBuilder("Iterativo: \n");
+		
+		for(String linea: Files2.linesFromFile("data/PI1Ej4DatosEntrada.txt")) {
+			String[] partes = linea.split(",");
+			Integer a = Integer.valueOf(partes[0]);
+			Integer b = Integer.valueOf(partes[1]);
+			
+			sbSinMem.append(Ejercicio4.ejercicio4RecSinMem(a, b));
+			sbSinMem.append("\n");
+			
+			sbConMem.append(Ejercicio4.ejercicio4RecConMem(a, b));
+			sbConMem.append("\n");
+			
+			sbIter.append(Ejercicio4.ejercicio4Iter(a, b));
+			sbIter.append("\n");
+		}
+		
+		System.out.println(sbSinMem.toString());
+		System.out.println(sbConMem.toString());
+		System.out.println(sbIter.toString());
+		System.out.println("=============================================");
+		System.out.println("\n\n");
+	}	
 	
 	public static void main(String[] args) {
 		testEjercicio1();
 		testEjercicio2();
 		testEjercicio3();
+		testEjercicio4();
 	}
 	
 }
